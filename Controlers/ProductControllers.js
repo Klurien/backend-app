@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const Product = require("../Models/ProductModel");
 
-// 🟢 CREATE Product
 const createProduct = async (req, res) => {
   try {
     const existingProduct = await Product.findOne({ name: req.body.name });
@@ -21,7 +20,7 @@ const createProduct = async (req, res) => {
   }
 };
 
-// 🟢 GET All Products
+
 const getProduct = async (req, res) => {
   try {
     const products = await Product.find();
@@ -33,7 +32,7 @@ const getProduct = async (req, res) => {
   }
 };
 
-// 🟢 GET Single Product by ID
+
 const findProduct = async (req, res) => {
   try {
     const product = await Product.findById(req.params.id);
@@ -50,7 +49,7 @@ const findProduct = async (req, res) => {
   }
 };
 
-// 🟢 UPDATE Product
+
 const updateProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -67,7 +66,7 @@ const updateProduct = async (req, res) => {
   }
 };
 
-// 🟢 DELETE Product
+
 const deleteProduct = async (req, res) => {
   try {
     const product = await Product.findByIdAndDelete(req.params.id);
@@ -84,7 +83,7 @@ const deleteProduct = async (req, res) => {
   }
 };
 
-// Export all functions
+
 module.exports = {
   createProduct,
   getProduct,

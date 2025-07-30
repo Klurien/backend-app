@@ -3,7 +3,7 @@ const { createProduct, updateProduct, deleteProduct, findProduct } = require('..
 const router = express.Router();
 router.use(express.json());
 
-// Allow url encodding
+
 router.use(express.urlencoded({extended:true}));
 
 router.post("/createProduct", createProduct);
